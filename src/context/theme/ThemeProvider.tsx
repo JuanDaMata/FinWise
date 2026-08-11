@@ -10,14 +10,16 @@ export function ThemeProvider({ children }: PropsWithChildren) {
         }
 
         const systemPrefersDark = window.matchMedia(
-            '(prefers-color-schema: dark)',
+            '(prefers-color-scheme: dark)',
         ).matches
 
         return systemPrefersDark ? 'dark' : 'light'
     })
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme)
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+        
         localStorage.setItem('theme', theme)
     }, [theme])
 
