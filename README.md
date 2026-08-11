@@ -28,10 +28,9 @@ Para executar o projeto localmente, é necessário ter instalado:
 
 * **Node.js**
 * **npm**
+* Uma **API Key do Google Gemini**
 
-### Instalação
-
-Clone o repositório:
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/JuanDaMata/FinWise.git
@@ -43,13 +42,35 @@ Entre na pasta do projeto:
 cd FinWise
 ```
 
-Instale as dependências:
+### 2. Instale as dependências
 
 ```bash
 npm install
 ```
 
-Inicie o servidor de desenvolvimento:
+### 3. Configure a chave da Gemini
+
+A aplicação utiliza a **API do Google Gemini** para fornecer os recursos de inteligência artificial do educador financeiro.
+
+Na raiz do projeto, crie um arquivo chamado:
+
+```text
+.env.local
+```
+
+Dentro dele, adicione sua chave seguindo exatamente este padrão:
+
+```env
+VITE_GEMINI_API_KEY=sua_chave_da_gemini
+```
+
+Substitua `sua_chave_da_gemini` pela sua chave de API.
+
+> ⚠️ **Importante:** não compartilhe sua API Key publicamente e não faça commit do arquivo `.env.local` no repositório.
+
+### 4. Inicie a aplicação
+
+Execute:
 
 ```bash
 npm run dev
@@ -69,17 +90,18 @@ Para gerar a versão de produção:
 npm run build
 ```
 
-Para executar a aplicação a partir da build:
+Para visualizar a build de produção:
 
 ```bash
 npm run preview
 ```
 
-Para verificar problemas de lint:
+Para executar a verificação de lint:
 
 ```bash
 npm run lint
 ```
+
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -90,6 +112,7 @@ O projeto foi desenvolvido utilizando:
 * **Vite** — ambiente de desenvolvimento e build;
 * **React Router DOM** — gerenciamento das rotas da aplicação;
 * **Tailwind CSS** — estilização e criação da interface;
+* **Google Gemini API** — integração de inteligência artificial para auxiliar na experiência de educação financeira;
 * **Lucide React** — utilização de ícones;
 * **React Loading Skeleton** — feedback visual durante carregamentos;
 * **Oxlint** — análise e qualidade do código.
